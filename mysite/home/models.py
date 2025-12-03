@@ -31,10 +31,10 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel("image"),
-        FieldPanel("call_to_action"),
         FieldPanel("faq"),
         FieldPanel("testimonial_slider"),
+        FieldPanel("call_to_action"),
+        FieldPanel("image"),
     ]
 
 
