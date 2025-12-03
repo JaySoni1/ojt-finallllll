@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags wagtailcore_tags static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/blog_page.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="blog-container">
+    <div class="blog-header">
+        <h1>{{ page.blog_name }}</h1>
+        <div class="blog-meta">
+            <strong>Published:</strong> {{ page.blog_day|date:"F j, Y" }}
+        </div>
+    </div>
+
+    {% if page.image %}
+    <div class="blog-image-container">
+        {% image page.image width-1200 %}
+    </div>
+    {% endif %}
+
+    <div class="body">
+        {{ page.body|richtext }}
+    </div>
+</div>
+{% endblock %}
